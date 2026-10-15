@@ -1,0 +1,26 @@
+{
+  "name": "mini-lab-back",
+  "version": "1.0.0",
+  "description": "API backend para sistema de laboratorio",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "...",
+    "@types/node": "...",
+    "eslint": "...",
+    "prettier": "...",
+    "tsx": "...",
+    "typescript": "..."
+  }
+}
