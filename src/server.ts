@@ -1,7 +1,8 @@
+import "dotenv/config";
 import app from "./app.js";
 
-const PORT = process.env.PORT || 3000;
+const port = Number(process.env.PORT ?? 3000);
 
-app.listen(PORT, () => {
-  console.log(`Mini-Lab-Back API running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Mini-Lab-Back API running on http://localhost:${port}`);
 });
