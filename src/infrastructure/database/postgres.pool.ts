@@ -1,4 +1,3 @@
-
 import { Pool } from "pg";
 import { env } from "../../config/env.js";
 
@@ -11,9 +10,7 @@ export const postgresPool = new Pool({
 
   connectionTimeoutMillis: 5_000,
 
-  ssl: env.databaseSsl
-    ? { rejectUnauthorized: true }
-    : false,
+  ssl: env.databaseSsl ? { rejectUnauthorized: true } : false,
 });
 
 // Captura errores inesperados en conexiones inactivas.

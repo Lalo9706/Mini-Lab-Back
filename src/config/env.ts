@@ -2,6 +2,11 @@ import "dotenv/config";
 
 const port = Number(process.env.PORT ?? 3000);
 const databaseUrl = process.env.DATABASE_URL?.trim();
+const jwtAccessSecret = process.env.JWT_ACCESS_SECRET;
+
+if (!jwtAccessSecret || Buffer.byteLength(jwtAccessSecret, "utf8") < 32) {
+  throw new Error("JWT_ACCESS_SECRET debe contener al menos 32 bytes.");
+}
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error("La variable PORT debe ser un puerto válido.");
@@ -30,4 +35,7 @@ export const env = {
   port,
   databaseUrl,
   databaseSsl,
+  jwtAccessSecret,
+  jwtIssuer: "mini-lab-back",
+  jwtAudience: "mini-lab-clients",
 };
