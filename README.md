@@ -24,15 +24,18 @@ Crea un archivo `.env` a partir de `.env.example` y configura sus valores (poner
 
 ## Desarrollo
 
-```bash
+```bh
 npm run dev
 ```
 
 ## Comprobaciones
 
-```bash
-npm run typecheck
-npm run lint
-npm run format:check
+```
+npm run format
+npm run check
 npm run build
 ```
+
+## scripts
+
+npm run db:passwords -- --apply
