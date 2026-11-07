@@ -4,6 +4,7 @@ import { notFoundMiddleware } from "./middlewares/not-found.middleware.js";
 import { errorMiddleware } from "./middlewares/error.middleware.js";
 
 import authRoutes from "./modules/auth/auth.routes.js";
+import patientRoutes from "./modules/patients/patient.routes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json({ limit: "1mb" }));
 app.use("/health", healthRoutes);
 //rutas
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/patients", patientRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
